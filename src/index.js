@@ -2,11 +2,13 @@ const { ApolloServer } = require("apollo-server");
 const typeDefs = require("./schema");
 const resolvers = require("./resolvers");
 const TrackAPI = require("./datasources/track-api");
+const newrelicPlugin = require("@newrelic/apollo-server-plugin");
 
 async function startApolloServer(typeDefs, resolvers) {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    plugins: [newrelicPlugin],
     dataSources: () => {
       return {
         trackAPI: new TrackAPI(),
