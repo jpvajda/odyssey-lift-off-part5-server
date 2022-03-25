@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ["apollo-castronauts-test"],
+  app_name: ["apollo-castronauts-test", "apollo-castronauts-test-client"],
   /**
    * Your New Relic license key.
    */
